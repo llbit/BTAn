@@ -1,0 +1,9 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'org.extendj.BTAn'
+jar {
+  manifest.attributes 'Main-Class': project.mainClassName
+  destinationDir = projectDir
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
