@@ -139,9 +139,11 @@ public class BTAn {
       boolean compressed = numDefaultActions != 0;
       short[] defaultActions;
       if (compressed) {
+        System.out.println("Default actions:");
         defaultActions = new short[numDefaultActions];
         for (int i = 0; i < numDefaultActions; i++) {
           defaultActions[i] = data.readShort();
+          System.out.format("  %d -> %d%n", i, defaultActions[i]);
         }
       }
 
